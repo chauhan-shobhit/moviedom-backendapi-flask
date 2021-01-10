@@ -2,14 +2,14 @@ movie_catalog = []
 
 def get_id():
     if (movie_catalog):
-        return len(movie_catalog)
+        return len(movie_catalog) + 1
     else:
         return 1
 
 
 class Movie:
 
-    def __init__(self, name , image, alt, genre_id, url, price_for_rent, price_for_buy, count_rent, count_buy, rating, num_reviews):
+    def __init__(self, name , image, alt, genre_id, url, price_for_rent, price_for_buy, count_rent, count_buy, rating, num_reviews, is_available):
         self.id = get_id()
         self.name = name
         self.image = image
@@ -22,6 +22,7 @@ class Movie:
         self.count_rent = count_rent
         self.count_buy = count_buy
         self.num_reviews =  num_reviews
+        self.is_available  = is_available
 
     @property
     def data(self):
@@ -38,5 +39,6 @@ class Movie:
        'price_for_buy' : self.price_for_buy , 
        'count_rent' : self.count_rent , 
        'count_buy' : self.count_buy , 
-       'num_reviews' : self.num_reviews 
+       'num_reviews' : self.num_reviews,
+       'is_available' : self.is_available 
         }

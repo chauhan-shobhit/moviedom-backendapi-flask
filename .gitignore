@@ -1,1 +1,3 @@
 mdvenv/
+__pycache__/
+*.pyc
