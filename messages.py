@@ -1,1 +1,7 @@
 MOVIE_NOT_FOUND = 'Movie not found'
+USER_NOT_FOUND = 'User Not FOUND'
+INVALID_USER_OR_EMAIL = 'Invalid User Credentials'
+USERNAME_ALREADY_EXISTS = 'Username already exists' 
+EMAIL_ALREADY_EXISTS = 'Email already exists'
+USER_CREATION_SUCCESSFUL = 'User was successfully created'
+USER_UPDATE_SUCCESSFUL = 'User was successfully Updated'

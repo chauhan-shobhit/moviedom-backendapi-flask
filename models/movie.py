@@ -1,3 +1,5 @@
+from extensions import db
+
 movie_catalog = []
 
 def get_id():
@@ -7,38 +9,21 @@ def get_id():
         return 1
 
 
-class Movie:
+class Movie(db.Model):
+    __tablename__ = 'movie'
 
-    def __init__(self, name , image, alt, genre_id, url, price_for_rent, price_for_buy, count_rent, count_buy, rating, num_reviews, is_available):
-        self.id = get_id()
-        self.name = name
-        self.image = image
-        self.alt = alt
-        self.rating = rating
-        self.url = url
-        self.genre_id = genre_id
-        self.price_for_rent = price_for_rent 
-        self.price_for_buy =  price_for_buy 
-        self.count_rent = count_rent
-        self.count_buy = count_buy
-        self.num_reviews =  num_reviews
-        self.is_available  = is_available
-
-    @property
-    def data(self):
-        return {
-           
-
-       'name' :self.name ,
-       'image' : self.image ,
-       'alt' : self.alt ,
-       'rating' : self.rating ,
-       'url' : self.url ,
-       'genre_id' : self.genre_id ,
-       'price_for_rent' : self.price_for_rent , 
-       'price_for_buy' : self.price_for_buy , 
-       'count_rent' : self.count_rent , 
-       'count_buy' : self.count_buy , 
-       'num_reviews' : self.num_reviews,
-       'is_available' : self.is_available 
-        }
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    image =   db.Column(db.String(300))
+    alt =  db.Column(db.String(200))
+    rating =  db.Column(db.Float)
+    url = db.Column(db.String(100))
+    genre_id =  db.Column(db.Integer)
+    price_for_rent = db.Column(db.Float) 
+    price_for_buy =  db.Column(db.Float) 
+    count_rent = db.Column(db.Integer)
+    count_buy = db.Column(db.Integer)
+    num_reviews =  db.Column(db.Integer)
+    is_available  = db.Column(db.Boolean(), default=False)
+   
+        
